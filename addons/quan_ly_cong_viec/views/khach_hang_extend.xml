@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Extend thong_tin_khach_hang form view to add task button -->
+        <record id="view_thong_tin_khach_hang_form_task_button" model="ir.ui.view">
+            <field name="name">thong.tin.khach.hang.form.task.button</field>
+            <field name="model">thong_tin_khach_hang</field>
+            <field name="inherit_id" ref="quan_ly_khach_hang.view_thong_tin_khach_hang_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_tasks" type="object" class="oe_stat_button" icon="fa-tasks">
+                            <field name="task_count" widget="statinfo" string="Tất cả công việc"/>
+                        </button>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='phan_loai']" position="after">
+                    <field name="task_dang_thuc_hien" readonly="1"/>
+                    <field name="task_hoan_thanh" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

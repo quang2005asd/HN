@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_bao_cao_tree" model="ir.ui.view">
+        <field name="name">bao.cao.tree</field>
+        <field name="model">bao.cao</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="loai_bao_cao"/>
+                <field name="tu_ngay"/>
+                <field name="den_ngay"/>
+                <field name="nguoi_tao"/>
+                <field name="ngay_tao"/>
+                <field name="so_van_ban_den"/>
+                <field name="so_van_ban_di"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_bao_cao_form" model="ir.ui.view">
+        <field name="name">bao.cao.form</field>
+        <field name="model">bao.cao</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="loai_bao_cao"/>
+                        </group>
+                        <group>
+                            <field name="tu_ngay"/>
+                            <field name="den_ngay"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="nguoi_tao"/>
+                            <field name="ngay_tao"/>
+                        </group>
+                    </group>
+                    <group string="Thống kê">
+                        <group>
+                            <field name="so_van_ban_den"/>
+                        </group>
+                        <group>
+                            <field name="so_van_ban_di"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="mo_ta"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_bao_cao" model="ir.actions.act_window">
+        <field name="name">Báo Cáo</field>
+        <field name="res_model">bao.cao</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

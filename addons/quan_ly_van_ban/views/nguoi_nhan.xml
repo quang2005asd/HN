@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_nguoi_nhan_tree" model="ir.ui.view">
+        <field name="name">nguoi.nhan.tree</field>
+        <field name="model">nguoi.nhan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="chuc_vu"/>
+                <field name="phong_ban"/>
+                <field name="email"/>
+                <field name="so_dien_thoai"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_nguoi_nhan_form" model="ir.ui.view">
+        <field name="name">nguoi.nhan.form</field>
+        <field name="model">nguoi.nhan</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="chuc_vu"/>
+                            <field name="phong_ban"/>
+                        </group>
+                        <group>
+                            <field name="email"/>
+                            <field name="so_dien_thoai"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_nguoi_nhan" model="ir.actions.act_window">
+        <field name="name">Người Nhận</field>
+        <field name="res_model">nguoi.nhan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

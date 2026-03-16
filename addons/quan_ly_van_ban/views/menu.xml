@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_quan_ly_van_ban_root" 
+              name="Quản Lý Văn Bản"
+              sequence="10"/>
+
+    <!-- Văn Bản Menu -->
+    <menuitem id="menu_van_ban" 
+              name="Văn Bản"
+              parent="menu_quan_ly_van_ban_root"
+              sequence="10"/>
+
+    <menuitem id="menu_van_ban_den" 
+              name="Văn Bản Đến"
+              parent="menu_van_ban"
+              action="action_van_ban_den"
+              sequence="10"/>
+
+    <menuitem id="menu_van_ban_di" 
+              name="Văn Bản Đi"
+              parent="menu_van_ban"
+              action="action_van_ban_di"
+              sequence="20"/>
+
+    <menuitem id="menu_phieu_chuyen" 
+              name="Phiếu Chuyển"
+              parent="menu_van_ban"
+              action="action_phieu_chuyen"
+              sequence="30"/>
+
+    <!-- Danh Mục Menu -->
+    <menuitem id="menu_danh_muc" 
+              name="Danh Mục"
+              parent="menu_quan_ly_van_ban_root"
+              sequence="20"/>
+
+    <menuitem id="menu_loai_van_ban" 
+              name="Loại Văn Bản"
+              parent="menu_danh_muc"
+              action="action_loai_van_ban"
+              sequence="10"/>
+
+    <menuitem id="menu_nguoi_nhan" 
+              name="Người Nhận"
+              parent="menu_danh_muc"
+              action="action_nguoi_nhan"
+              sequence="20"/>
+
+    <!-- Báo Cáo Menu -->
+    <menuitem id="menu_bao_cao_van_ban" 
+              name="Báo Cáo"
+              parent="menu_quan_ly_van_ban_root"
+              action="action_bao_cao"
+              sequence="30"/>
+
+    <!-- Log Menu -->
+    <menuitem id="menu_log_hoat_dong" 
+              name="Log Hoạt Động"
+              parent="menu_quan_ly_van_ban_root"
+              action="action_log_hoat_dong"
+              sequence="40"/>
+</odoo>

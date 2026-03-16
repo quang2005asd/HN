@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_task_form" model="ir.ui.view">
+            <field name="name">task.form</field>
+            <field name="model">task</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Công việc</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="name"/>
+                            <field name="priority"/>
+                            <field name="khach_hang_id"/>
+                            <field name="ho_tro_khach_hang_id" domain="[('ten_khach_hang', '=', khach_hang_id)]"/>
+                            <field name="leader_id"/>
+                            <field name="deadline"/>
+                        </group>
+                        <group col="4" string="Chi tiết">
+                            <field name="progress"/> <!-- Thêm trường tiến độ -->
+                            <field name="state" invisible="1"/>
+                            <div>
+                                <span t-if="record.state == 'draft'" style="color: gray;">Nháp</span>
+                                <span t-if="record.state == 'in_progress'" style="color: blue;">Đang thực hiện</span>
+                                <span t-if="record.state == 'done'" style="color: green;">Hoàn thành</span>
+                            </div>
+                            <field name="member_ids"/>
+                            <field name="description" colspan="4"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_task_tree" model="ir.ui.view">
+            <field name="name">task.tree</field>
+            <field name="model">task</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="priority"/>
+                    <field name="khach_hang_id"/>
+                    <field name="leader_id"/>
+                    <field name="deadline"/>
+                    <field name="progress"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="task_search" model="ir.ui.view">
+            <field name="model">task</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="khach_hang_id"/>
+                    <field name="leader_id"/>
+                    <field name="deadline"/>
+                    <field name="progress"/> <!-- Thêm vào tìm kiếm -->
+                    <field name="state"/>
+                    <field name="member_ids"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_task" model="ir.actions.act_window">
+            <field name="name">Công việc</field>
+            <field name="res_model">task</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="task_search"/>
+        </record>
+    </data>
+</odoo>

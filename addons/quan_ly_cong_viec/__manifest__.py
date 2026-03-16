@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nhan_su",
+    'name': "quan_ly_cong_viec",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,16 +20,23 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'mail', 'quan_ly_khach_hang', 'nhan_su'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/nhan_vien.xml',
-        'views/cham_cong.xml',
-        'views/bang_luong.xml',
+        'data/gemini_config.xml',
+        'views/task_view.xml',
+        'views/task_statistic_view.xml',
+        'views/my_tasks_view.xml',
+        'views/nhan_vien_extend.xml',
+        'views/khach_hang_extend.xml',
+        'views/ho_tro_extend.xml',
         'views/menu.xml',
     ],
+    # only loaded in demonstration mode
     'demo': [],
+    'installable': True,
+    'application': True,
     'license': 'LGPL-3',
 }

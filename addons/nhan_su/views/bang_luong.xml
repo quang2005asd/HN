@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_bang_luong_tree" model="ir.ui.view">
+        <field name="name">bang.luong.tree</field>
+        <field name="model">bang.luong</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="trang_thai=='nhap'" decoration-success="trang_thai=='da_tra'">
+                <field name="name"/>
+                <field name="nhan_vien_id"/>
+                <field name="thang"/>
+                <field name="nam"/>
+                <field name="luong_co_ban"/>
+                <field name="so_ngay_cong_thuc_te"/>
+                <field name="tong_luong" sum="Tổng lương"/>
+                <field name="trang_thai"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_bang_luong_form" model="ir.ui.view">
+        <field name="name">bang.luong.form</field>
+        <field name="model">bang.luong</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_xac_nhan" string="Xác nhận" type="object" 
+                            class="oe_highlight" attrs="{'invisible': [('trang_thai', '!=', 'nhap')]}"/>
+                    <button name="action_tra_luong" string="Trả lương" type="object" 
+                            class="oe_highlight" attrs="{'invisible': [('trang_thai', '!=', 'xac_nhan')]}"/>
+                    <field name="trang_thai" widget="statusbar" statusbar_visible="nhap,xac_nhan,da_tra"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="nhan_vien_id"/>
+                            <field name="thang"/>
+                            <field name="nam"/>
+                        </group>
+                        <group>
+                            <field name="luong_co_ban"/>
+                            <field name="so_ngay_cong_chuan"/>
+                            <field name="luong_ngay"/>
+                        </group>
+                    </group>
+                    
+                    <group string="Chấm công">
+                        <group>
+                            <field name="so_ngay_cong_thuc_te"/>
+                            <field name="tong_phat"/>
+                        </group>
+                        <group>
+                            <field name="tong_OT"/>
+                        </group>
+                    </group>
+                    
+                    <group string="Các khoản khác">
+                        <group>
+                            <field name="phu_cap"/>
+                        </group>
+                        <group>
+                            <field name="thuong"/>
+                        </group>
+                    </group>
+                    
+                    <group>
+                        <group>
+                            <field name="tong_luong" class="oe_subtotal_footer_separator" widget="monetary"/>
+                            <field name="ngay_tra_luong" attrs="{'invisible': [('trang_thai', '!=', 'da_tra')]}"/>
+                        </group>
+                    </group>
+                    
+                    <group>
+                        <field name="ghi_chu"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_bang_luong_search" model="ir.ui.view">
+        <field name="name">bang.luong.search</field>
+        <field name="model">bang.luong</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nhan_vien_id"/>
+                <field name="thang"/>
+                <field name="nam"/>
+                <filter name="chua_tra" string="Chưa trả" domain="[('trang_thai', '!=', 'da_tra')]"/>
+                <filter name="da_tra" string="Đã trả" domain="[('trang_thai', '=', 'da_tra')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_nhan_vien" string="Nhân viên" context="{'group_by': 'nhan_vien_id'}"/>
+                    <filter name="group_thang" string="Tháng" context="{'group_by': 'thang'}"/>
+                    <filter name="group_nam" string="Năm" context="{'group_by': 'nam'}"/>
+                    <filter name="group_trang_thai" string="Trạng thái" context="{'group_by': 'trang_thai'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_bang_luong" model="ir.actions.act_window">
+        <field name="name">Bảng Lương</field>
+        <field name="res_model">bang.luong</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

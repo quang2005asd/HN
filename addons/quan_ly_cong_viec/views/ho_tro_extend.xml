@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Extend ho_tro_khach_hang form view to add task button -->
+        <record id="view_ho_tro_khach_hang_form_task_button" model="ir.ui.view">
+            <field name="name">ho.tro.khach.hang.form.task.button</field>
+            <field name="model">ho_tro_khach_hang</field>
+            <field name="inherit_id" ref="quan_ly_khach_hang.view_ho_tro_khach_hang_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet" position="before">
+                    <header>
+                        <button name="action_tao_task_tu_ticket" type="object" string="Tạo công việc" class="oe_highlight" attrs="{'invisible': [('trang_thai', '=', 'resolved')]}"/>
+                    </header>
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                    <group string="Công việc liên quan" attrs="{'invisible': [('task_lien_quan_count', '=', 0)]}">
+                        <button name="action_view_tasks_lien_quan" type="object" class="oe_link">
+                            <field name="task_lien_quan_count"/> công việc liên quan
+                        </button>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

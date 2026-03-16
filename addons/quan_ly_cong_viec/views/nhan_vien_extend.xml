@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Extend nhan_vien form view to add task button -->
+        <record id="view_nhan_vien_form_task_button" model="ir.ui.view">
+            <field name="name">nhan.vien.form.task.button</field>
+            <field name="model">nhan.vien</field>
+            <field name="inherit_id" ref="nhan_su.view_nhan_vien_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_view_cong_viec" type="object" class="oe_stat_button" icon="fa-tasks">
+                        <field name="task_count" widget="statinfo" string="Công việc"/>
+                    </button>
+                    <button name="action_view_khach_hang_phu_trach" type="object" class="oe_stat_button" icon="fa-users">
+                        <field name="khach_hang_phu_trach_count" widget="statinfo" string="Khách hàng"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

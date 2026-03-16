@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_van_ban_den_tree" model="ir.ui.view">
+        <field name="name">van.ban.den.tree</field>
+        <field name="model">van.ban.den</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="so_den"/>
+                <field name="name"/>
+                <field name="ngay_den"/>
+                <field name="loai_van_ban_id"/>
+                <field name="co_quan_ban_hanh"/>
+                <field name="trich_yeu"/>
+                <field name="trang_thai"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_van_ban_den_form" model="ir.ui.view">
+        <field name="name">van.ban.den.form</field>
+        <field name="model">van.ban.den</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="trang_thai" widget="statusbar" statusbar_visible="moi,dang_xu_ly,hoan_thanh"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="so_den"/>
+                            <field name="name"/>
+                            <field name="ngay_den"/>
+                            <field name="ngay_van_ban"/>
+                        </group>
+                        <group>
+                            <field name="loai_van_ban_id"/>
+                            <field name="co_quan_ban_hanh"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="trich_yeu"/>
+                    </group>
+                    <group>
+                        <field name="nguoi_nhan_ids" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="file_dinh_kem" filename="file_name"/>
+                            <field name="file_name" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="ghi_chu"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_van_ban_den" model="ir.actions.act_window">
+        <field name="name">Văn Bản Đến</field>
+        <field name="res_model">van.ban.den</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

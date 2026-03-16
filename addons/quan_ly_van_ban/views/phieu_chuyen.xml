@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_phieu_chuyen_tree" model="ir.ui.view">
+        <field name="name">phieu.chuyen.tree</field>
+        <field name="model">phieu.chuyen</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="ngay_chuyen"/>
+                <field name="nguoi_chuyen"/>
+                <field name="nguoi_nhan_id"/>
+                <field name="van_ban_den_id"/>
+                <field name="van_ban_di_id"/>
+                <field name="trang_thai"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_phieu_chuyen_form" model="ir.ui.view">
+        <field name="name">phieu.chuyen.form</field>
+        <field name="model">phieu.chuyen</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="trang_thai" widget="statusbar" statusbar_visible="chua_nhan,da_nhan"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="ngay_chuyen"/>
+                            <field name="nguoi_chuyen"/>
+                            <field name="nguoi_nhan_id"/>
+                        </group>
+                        <group>
+                            <field name="van_ban_den_id"/>
+                            <field name="van_ban_di_id"/>
+                            <field name="ngay_nhan"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="noi_dung"/>
+                    </group>
+                    <group>
+                        <field name="ghi_chu"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_phieu_chuyen" model="ir.actions.act_window">
+        <field name="name">Phiếu Chuyển</field>
+        <field name="res_model">phieu.chuyen</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

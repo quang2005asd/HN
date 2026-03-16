@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_cham_cong_tree" model="ir.ui.view">
+        <field name="name">cham.cong.tree</field>
+        <field name="model">cham.cong</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="trang_thai=='thieu_gio'" decoration-success="trang_thai=='hoan_thanh'">
+                <field name="name"/>
+                <field name="nhan_vien_id"/>
+                <field name="ngay_cham"/>
+                <field name="gio_vao"/>
+                <field name="gio_ra"/>
+                <field name="so_gio_lam" string="Giờ làm"/>
+                <field name="gio_OT" string="OT"/>
+                <field name="di_muon"/>
+                <field name="ve_som"/>
+                <field name="tien_phat" sum="Tổng phạt"/>
+                <field name="tien_OT" sum="Tổng OT"/>
+                <field name="trang_thai"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_cham_cong_form" model="ir.ui.view">
+        <field name="name">cham.cong.form</field>
+        <field name="model">cham.cong</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="trang_thai" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="nhan_vien_id"/>
+                            <field name="ngay_cham"/>
+                            <field name="gio_vao"/>
+                            <field name="gio_ra"/>
+                        </group>
+                        <group>
+                            <field name="so_gio_lam"/>
+                            <field name="gio_lam_thieu"/>
+                            <field name="gio_OT"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="di_muon"/>
+                            <field name="ve_som"/>
+                        </group>
+                        <group>
+                            <field name="tien_phat"/>
+                            <field name="tien_OT"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="ghi_chu"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_cham_cong_search" model="ir.ui.view">
+        <field name="name">cham.cong.search</field>
+        <field name="model">cham.cong</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nhan_vien_id"/>
+                <field name="ngay_cham"/>
+                <filter name="di_muon" string="Đi muộn" domain="[('di_muon', '=', True)]"/>
+                <filter name="ve_som" string="Về sớm" domain="[('ve_som', '=', True)]"/>
+                <filter name="thieu_gio" string="Thiếu giờ" domain="[('trang_thai', '=', 'thieu_gio')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_nhan_vien" string="Nhân viên" context="{'group_by': 'nhan_vien_id'}"/>
+                    <filter name="group_ngay" string="Ngày" context="{'group_by': 'ngay_cham'}"/>
+                    <filter name="group_trang_thai" string="Trạng thái" context="{'group_by': 'trang_thai'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_cham_cong" model="ir.actions.act_window">
+        <field name="name">Chấm Công</field>
+        <field name="res_model">cham.cong</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

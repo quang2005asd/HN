@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_log_hoat_dong_tree" model="ir.ui.view">
+        <field name="name">log.hoat.dong.tree</field>
+        <field name="model">log.hoat.dong</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false">
+                <field name="ngay_thuc_hien"/>
+                <field name="name"/>
+                <field name="loai_hoat_dong"/>
+                <field name="nguoi_thuc_hien"/>
+                <field name="van_ban_den_id"/>
+                <field name="van_ban_di_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_log_hoat_dong_form" model="ir.ui.view">
+        <field name="name">log.hoat.dong.form</field>
+        <field name="model">log.hoat.dong</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="ngay_thuc_hien"/>
+                            <field name="nguoi_thuc_hien"/>
+                        </group>
+                        <group>
+                            <field name="loai_hoat_dong"/>
+                            <field name="van_ban_den_id"/>
+                            <field name="van_ban_di_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="mo_ta"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_log_hoat_dong" model="ir.actions.act_window">
+        <field name="name">Log Hoạt Động</field>
+        <field name="res_model">log.hoat.dong</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
