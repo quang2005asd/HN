@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Nhan vien mau -->
+        <record id="sample_nv_bac_1" model="nhan.vien">
+            <field name="name">Nguyen Van An</field>
+            <field name="ma_dinh_danh">NV001</field>
+            <field name="vung_mien">bac</field>
+            <field name="email">an.nv@example.com</field>
+            <field name="so_dien_thoai">0901000001</field>
+            <field name="luong_co_ban">14000000</field>
+            <field name="phu_cap">1500000</field>
+        </record>
+
+        <record id="sample_nv_bac_2" model="nhan.vien">
+            <field name="name">Tran Thi Binh</field>
+            <field name="ma_dinh_danh">NV002</field>
+            <field name="vung_mien">bac</field>
+            <field name="email">binh.nv@example.com</field>
+            <field name="so_dien_thoai">0901000002</field>
+            <field name="luong_co_ban">13500000</field>
+            <field name="phu_cap">1200000</field>
+        </record>
+
+        <record id="sample_nv_trung_1" model="nhan.vien">
+            <field name="name">Le Van Cuong</field>
+            <field name="ma_dinh_danh">NV003</field>
+            <field name="vung_mien">trung</field>
+            <field name="email">cuong.nv@example.com</field>
+            <field name="so_dien_thoai">0901000003</field>
+            <field name="luong_co_ban">15000000</field>
+            <field name="phu_cap">1800000</field>
+        </record>
+
+        <record id="sample_nv_trung_2" model="nhan.vien">
+            <field name="name">Pham Thi Duyen</field>
+            <field name="ma_dinh_danh">NV004</field>
+            <field name="vung_mien">trung</field>
+            <field name="email">duyen.nv@example.com</field>
+            <field name="so_dien_thoai">0901000004</field>
+            <field name="luong_co_ban">13200000</field>
+            <field name="phu_cap">1000000</field>
+        </record>
+
+        <record id="sample_nv_nam_1" model="nhan.vien">
+            <field name="name">Hoang Minh Duc</field>
+            <field name="ma_dinh_danh">NV005</field>
+            <field name="vung_mien">nam</field>
+            <field name="email">duc.nv@example.com</field>
+            <field name="so_dien_thoai">0901000005</field>
+            <field name="luong_co_ban">14500000</field>
+            <field name="phu_cap">1600000</field>
+        </record>
+
+        <record id="sample_nv_nam_2" model="nhan.vien">
+            <field name="name">Vo Gia Han</field>
+            <field name="ma_dinh_danh">NV006</field>
+            <field name="vung_mien">nam</field>
+            <field name="email">han.nv@example.com</field>
+            <field name="so_dien_thoai">0901000006</field>
+            <field name="luong_co_ban">12800000</field>
+            <field name="phu_cap">900000</field>
+        </record>
+
+        <!-- San pham mau -->
+        <record id="sample_product_cpu" model="chi_tiet_san_pham">
+            <field name="name">CPU Intel Core i5</field>
+            <field name="category">cpu</field>
+            <field name="brand">asus</field>
+            <field name="price_unit">5200000</field>
+            <field name="stock_quantity">35</field>
+            <field name="warranty">36</field>
+        </record>
+
+        <record id="sample_product_gpu" model="chi_tiet_san_pham">
+            <field name="name">GPU RTX 4060</field>
+            <field name="category">gpu</field>
+            <field name="brand">msi</field>
+            <field name="price_unit">8900000</field>
+            <field name="stock_quantity">18</field>
+            <field name="warranty">24</field>
+        </record>
+
+        <record id="sample_product_ram" model="chi_tiet_san_pham">
+            <field name="name">RAM DDR4 16GB</field>
+            <field name="category">ram</field>
+            <field name="brand">gigabyte</field>
+            <field name="price_unit">1350000</field>
+            <field name="stock_quantity">80</field>
+            <field name="warranty">24</field>
+        </record>
+
+        <record id="sample_product_ssd" model="chi_tiet_san_pham">
+            <field name="name">SSD NVMe 1TB</field>
+            <field name="category">storage</field>
+            <field name="brand">asus</field>
+            <field name="price_unit">2300000</field>
+            <field name="stock_quantity">40</field>
+            <field name="warranty">36</field>
+        </record>
+
+        <!-- Khach hang mau -->
+        <record id="sample_customer_hn" model="thong_tin_khach_hang">
+            <field name="ten_khach_hang">Cong ty Sao Bac</field>
+            <field name="dia_chi">Ha Noi</field>
+            <field name="so_dien_thoai">02430000001</field>
+            <field name="email">contact@saobac.vn</field>
+            <field name="cong_ty">Sao Bac JSC</field>
+            <field name="vung_mien">bac</field>
+            <field name="nhan_vien_phu_trach_id" ref="sample_nv_bac_1"/>
+        </record>
+
+        <record id="sample_customer_hp" model="thong_tin_khach_hang">
+            <field name="ten_khach_hang">Cong ty Bien Xanh</field>
+            <field name="dia_chi">Hai Phong</field>
+            <field name="so_dien_thoai">02250000002</field>
+            <field name="email">support@bienxanh.vn</field>
+            <field name="cong_ty">Bien Xanh Co</field>
+            <field name="vung_mien">bac</field>
+            <field name="nhan_vien_phu_trach_id" ref="sample_nv_bac_2"/>
+        </record>
+
+        <record id="sample_customer_dn" model="thong_tin_khach_hang">
+            <field name="ten_khach_hang">Cong ty Trung Viet</field>
+            <field name="dia_chi">Da Nang</field>
+            <field name="so_dien_thoai">02360000003</field>
+            <field name="email">info@trungviet.vn</field>
+            <field name="cong_ty">Trung Viet Ltd</field>
+            <field name="vung_mien">trung</field>
+            <field name="nhan_vien_phu_trach_id" ref="sample_nv_trung_1"/>
+        </record>
+
+        <record id="sample_customer_hue" model="thong_tin_khach_hang">
+            <field name="ten_khach_hang">Shop Co Do</field>
+            <field name="dia_chi">Hue</field>
+            <field name="so_dien_thoai">02340000004</field>
+            <field name="email">hello@codo.vn</field>
+            <field name="cong_ty">Co Do Shop</field>
+            <field name="vung_mien">trung</field>
+            <field name="nhan_vien_phu_trach_id" ref="sample_nv_trung_2"/>
+        </record>
+
+        <record id="sample_customer_hcm" model="thong_tin_khach_hang">
+            <field name="ten_khach_hang">Cong ty Nam A</field>
+            <field name="dia_chi">Ho Chi Minh</field>
+            <field name="so_dien_thoai">02839000005</field>
+            <field name="email">sales@nama.vn</field>
+            <field name="cong_ty">Nam A Corp</field>
+            <field name="vung_mien">nam</field>
+            <field name="nhan_vien_phu_trach_id" ref="sample_nv_nam_1"/>
+        </record>
+
+        <record id="sample_customer_ct" model="thong_tin_khach_hang">
+            <field name="ten_khach_hang">Sieu thi Delta</field>
+            <field name="dia_chi">Can Tho</field>
+            <field name="so_dien_thoai">02923000006</field>
+            <field name="email">ops@delta.vn</field>
+            <field name="cong_ty">Delta Retail</field>
+            <field name="vung_mien">nam</field>
+            <field name="nhan_vien_phu_trach_id" ref="sample_nv_nam_2"/>
+        </record>
+
+        <!-- Don hang mau -->
+        <record id="sample_order_1" model="chi_tiet_don_hang">
+            <field name="khach_hang_id" ref="sample_customer_hn"/>
+            <field name="product_id" ref="sample_product_cpu"/>
+            <field name="quantity">4</field>
+            <field name="trang_thai">hoan_thanh</field>
+            <field name="ngay_dat_hang">2026-02-02</field>
+        </record>
+
+        <record id="sample_order_2" model="chi_tiet_don_hang">
+            <field name="khach_hang_id" ref="sample_customer_hn"/>
+            <field name="product_id" ref="sample_product_ram"/>
+            <field name="quantity">10</field>
+            <field name="trang_thai">hoan_thanh</field>
+            <field name="ngay_dat_hang">2026-02-18</field>
+        </record>
+
+        <record id="sample_order_3" model="chi_tiet_don_hang">
+            <field name="khach_hang_id" ref="sample_customer_dn"/>
+            <field name="product_id" ref="sample_product_gpu"/>
+            <field name="quantity">2</field>
+            <field name="trang_thai">dang_xu_ly</field>
+            <field name="ngay_dat_hang">2026-03-02</field>
+        </record>
+
+        <record id="sample_order_4" model="chi_tiet_don_hang">
+            <field name="khach_hang_id" ref="sample_customer_hcm"/>
+            <field name="product_id" ref="sample_product_ssd"/>
+            <field name="quantity">6</field>
+            <field name="trang_thai">hoan_thanh</field>
+            <field name="ngay_dat_hang">2026-01-22</field>
+        </record>
+
+        <record id="sample_order_5" model="chi_tiet_don_hang">
+            <field name="khach_hang_id" ref="sample_customer_ct"/>
+            <field name="product_id" ref="sample_product_ram"/>
+            <field name="quantity">16</field>
+            <field name="trang_thai">moi</field>
+            <field name="ngay_dat_hang">2026-03-08</field>
+        </record>
+
+        <!-- Ticket ho tro mau -->
+        <record id="sample_ticket_1" model="ho_tro_khach_hang">
+            <field name="ten_khach_hang" ref="sample_customer_hn"/>
+            <field name="muc_do_uu_tien">cao</field>
+            <field name="phuong_thuc_lien_lac">email</field>
+            <field name="thoi_gian_bat_dau">2026-03-10 08:30:00</field>
+            <field name="yeu_cau_cua_khach">Kiem tra hieu nang may chu</field>
+            <field name="mo_ta_chi_tiet">He thong cham do tre vao gio cao diem.</field>
+            <field name="trang_thai">in_progress</field>
+            <field name="nhan_vien_phu_trach" ref="sample_nv_bac_1"/>
+        </record>
+
+        <record id="sample_ticket_2" model="ho_tro_khach_hang">
+            <field name="ten_khach_hang" ref="sample_customer_dn"/>
+            <field name="muc_do_uu_tien">trung_binh</field>
+            <field name="phuong_thuc_lien_lac">call</field>
+            <field name="thoi_gian_bat_dau">2026-03-11 09:00:00</field>
+            <field name="thoi_gian_ket_thuc">2026-03-11 11:30:00</field>
+            <field name="yeu_cau_cua_khach">Ho tro cai dat lai phan mem quan tri</field>
+            <field name="mo_ta_chi_tiet">Can huong dan backup va khoi phuc du lieu.</field>
+            <field name="trang_thai">resolved</field>
+            <field name="nhan_vien_phu_trach" ref="sample_nv_trung_1"/>
+            <field name="diem_danh_gia">5</field>
+            <field name="phan_hoi_khach_hang">Ho tro nhanh va ro rang</field>
+        </record>
+
+        <record id="sample_ticket_3" model="ho_tro_khach_hang">
+            <field name="ten_khach_hang" ref="sample_customer_hcm"/>
+            <field name="muc_do_uu_tien">khan_cap</field>
+            <field name="phuong_thuc_lien_lac">chat</field>
+            <field name="thoi_gian_bat_dau">2026-03-12 14:00:00</field>
+            <field name="yeu_cau_cua_khach">Su co ket noi he thong POS</field>
+            <field name="mo_ta_chi_tiet">Mat ket noi lien tuc, can xu ly gap.</field>
+            <field name="trang_thai">pending</field>
+            <field name="nhan_vien_phu_trach" ref="sample_nv_nam_1"/>
+        </record>
+
+        <!-- Task mau tao truc tiep -->
+        <record id="sample_task_manual_1" model="task">
+            <field name="name">Bao tri he thong CRM theo thang</field>
+            <field name="description">Ra soat module, backup va toi uu truy van.</field>
+            <field name="priority">1</field>
+            <field name="state">in_progress</field>
+            <field name="deadline">2026-03-28</field>
+            <field name="leader_id" ref="sample_nv_trung_2"/>
+            <field name="khach_hang_id" ref="sample_customer_hue"/>
+            <field name="member_ids" eval="[(6, 0, [ref('sample_nv_trung_1')])]"/>
+        </record>
+
+        <record id="sample_task_manual_2" model="task">
+            <field name="name">Nang cap firmware thiet bi kho</field>
+            <field name="description">Lap lich nang cap theo tung cum thiet bi.</field>
+            <field name="priority">2</field>
+            <field name="state">draft</field>
+            <field name="deadline">2026-03-30</field>
+            <field name="leader_id" ref="sample_nv_nam_2"/>
+            <field name="khach_hang_id" ref="sample_customer_ct"/>
+            <field name="member_ids" eval="[(6, 0, [ref('sample_nv_nam_1')])]"/>
+        </record>
+    </data>
+</odoo>

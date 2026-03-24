@@ -46,6 +46,7 @@
                 'addons/quan_ly_khach_hang/static/src/js/dashboard_rank.js',
                 'addons/quan_ly_khach_hang/static/src/js/dashboard_rank_support.js',
                 'addons/quan_ly_khach_hang/static/src/css/dashboard.css',
+                'addons/quan_ly_khach_hang/static/src/css/premium_ui.css',
                 'https://cdn.jsdelivr.net/npm/chart.js',
             ],
         },

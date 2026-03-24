@@ -79,6 +79,18 @@ class HoTroKhachHang(models.Model):
         string="File đính kèm"
     )
 
+    san_pham_ho_tro_ids = fields.One2many(
+        'ho_tro_khach_hang_line',
+        'ho_tro_id',
+        string="Sản phẩm yêu cầu"
+    )
+
+    chi_tiet_don_hang_ids = fields.One2many(
+        'chi_tiet_don_hang',
+        'ho_tro_khach_hang_id',
+        string="Chi tiết đơn hàng đã tạo"
+    )
+
     # Ràng buộc dữ liệu: Điểm đánh giá phải từ 0 đến 5
     _sql_constraints = [
         ('check_diem_danh_gia', 'CHECK(diem_danh_gia BETWEEN 0 AND 5)',
@@ -97,9 +109,18 @@ class HoTroKhachHang(models.Model):
         record = super(HoTroKhachHang, self).create(vals)
         # Cập nhật thống kê sau khi tạo bản ghi mới
         self.env['thong_ke_ho_tro_nhan_vien'].update_thong_ke()
+        # Tạo các dòng chi tiết đơn hàng từ sản phẩm trên ticket
+        record._auto_tao_chi_tiet_don_hang()
         # Tự động tạo task từ ticket
         record._auto_tao_task()
         return record
+
+    def _get_product_summary_lines(self):
+        lines = []
+        for line in self.san_pham_ho_tro_ids:
+            if line.product_id:
+                lines.append(f"- {line.product_id.name}: {line.quantity}")
+        return lines
 
     def _auto_tao_task(self):
         """Tự động tạo task tương ứng khi có ticket hỗ trợ mới"""
@@ -117,16 +138,37 @@ class HoTroKhachHang(models.Model):
         }
         muc_uu_tien = self.muc_do_uu_tien or 'trung_binh'
         ngay_deadline = fields.Date.today() + timedelta(days=deadline_days.get(muc_uu_tien, 3))
+        product_lines = self._get_product_summary_lines()
+        task_description = self.mo_ta_chi_tiet or ''
+        if product_lines:
+            task_description = (
+                f"{task_description}\n\n"
+                f"Sản phẩm khách cần hỗ trợ:\n" + "\n".join(product_lines)
+            ).strip()
 
         self.env['task'].create({
             'name': f"[{self.ma_ho_tro}] {self.yeu_cau_cua_khach or 'Hỗ trợ khách hàng'}",
-            'description': self.mo_ta_chi_tiet or '',
+            'description': task_description,
             'priority': priority_map.get(muc_uu_tien, '1'),
             'khach_hang_id': self.ten_khach_hang.id,
             'ho_tro_khach_hang_id': self.id,
             'deadline': ngay_deadline,
             # leader_id để trống → Gemini tự phân công
         })
+
+    def _auto_tao_chi_tiet_don_hang(self):
+        """Tự động tạo chi tiết đơn hàng khi ticket có khai báo sản phẩm."""
+        if not self.ten_khach_hang or not self.san_pham_ho_tro_ids:
+            return
+
+        for line in self.san_pham_ho_tro_ids:
+            self.env['chi_tiet_don_hang'].create({
+                'khach_hang_id': self.ten_khach_hang.id,
+                'product_id': line.product_id.id,
+                'quantity': line.quantity,
+                'trang_thai': 'moi',
+                'ho_tro_khach_hang_id': self.id,
+            })
 
     def write(self, vals):
         result = super(HoTroKhachHang, self).write(vals)
@@ -140,3 +182,19 @@ class HoTroKhachHang(models.Model):
         if nhan_vien_ids:
             self.env['thong_ke_ho_tro_nhan_vien'].update_thong_ke(nhan_vien_ids)
         return result
+
+
+class HoTroKhachHangLine(models.Model):
+    _name = 'ho_tro_khach_hang_line'
+    _description = 'Dòng sản phẩm trong phiếu hỗ trợ khách hàng'
+
+    ho_tro_id = fields.Many2one('ho_tro_khach_hang', string='Phiếu hỗ trợ', required=True, ondelete='cascade')
+    product_id = fields.Many2one('chi_tiet_san_pham', string='Sản phẩm', required=True)
+    quantity = fields.Integer(string='Số lượng', required=True, default=1)
+    price_unit = fields.Float(string='Đơn giá', related='product_id.price_unit', store=True, readonly=True)
+    subtotal = fields.Float(string='Thành tiền', compute='_compute_subtotal', store=True)
+
+    @api.depends('quantity', 'price_unit')
+    def _compute_subtotal(self):
+        for record in self:
+            record.subtotal = record.quantity * record.price_unit

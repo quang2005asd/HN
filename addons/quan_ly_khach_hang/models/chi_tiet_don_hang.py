@@ -26,6 +26,7 @@ class ChiTietDonHang(models.Model):
     ], string="Trạng thái", default='moi')
 
     khach_hang_id = fields.Many2one('thong_tin_khach_hang', string="Khách hàng", required=True)
+    ho_tro_khach_hang_id = fields.Many2one('ho_tro_khach_hang', string="Phiếu hỗ trợ")
 
 
     @api.depends('quantity', 'price_unit')

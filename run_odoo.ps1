@@ -19,3 +19,4 @@ if ($Upgrade) {
 wsl bash -c "nohup $Py $Odoo -c $Conf -d $Db > $Log 2>&1 &"
 Start-Sleep -Seconds 12
 wsl bash -c "grep -E 'HTTP service|Modules loaded|ERROR|CRITICAL' $Log | tail -10"
+

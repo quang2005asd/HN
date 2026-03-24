@@ -1,49 +1,50 @@
-2026-03-01 12:58:18,251 5449 INFO ? odoo: Odoo version 15.0 
-2026-03-01 12:58:18,256 5449 INFO ? odoo: Using configuration file at /mnt/c/Users/quang/odoo-fitdnu/odoo.conf 
-2026-03-01 12:58:18,257 5449 INFO ? odoo: addons paths: ['/mnt/c/Users/quang/odoo-fitdnu/odoo/addons', '/home/quang/.local/share/Odoo/addons/15.0', '/mnt/c/Users/quang/odoo-fitdnu/addons'] 
-2026-03-01 12:58:18,258 5449 INFO ? odoo: database: odoo@localhost:5431 
-2026-03-01 12:58:19,427 5449 INFO ? odoo.addons.base.models.ir_actions_report: You need Wkhtmltopdf to print a pdf version of the reports. 
-2026-03-01 12:58:24,038 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading 1 modules... 
-2026-03-01 12:58:24,044 5449 INFO odoo_fitdnu_clean odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
-2026-03-01 12:58:24,065 5449 INFO odoo_fitdnu_clean odoo.modules.loading: updating modules list 
-2026-03-01 12:58:24,074 5449 INFO odoo_fitdnu_clean odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
-2026-03-01 12:58:33,868 5449 WARNING odoo_fitdnu_clean odoo.modules.module: Missing `license` key in manifest for 'quan_ly_van_ban', defaulting to LGPL-3 
-2026-03-01 12:58:48,350 5449 INFO odoo_fitdnu_clean odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['quan_ly_cong_viec', 'quan_ly_khach_hang'] to user __system__ #1 via n/a 
-2026-03-01 12:58:48,351 5449 INFO odoo_fitdnu_clean odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['quan_ly_cong_viec', 'quan_ly_khach_hang'] to user __system__ #1 via n/a 
-2026-03-01 12:58:57,749 5449 WARNING odoo_fitdnu_clean odoo.modules.module: Missing `license` key in manifest for 'quan_ly_van_ban', defaulting to LGPL-3 
-2026-03-01 12:59:11,324 5449 INFO odoo_fitdnu_clean odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
-2026-03-01 12:59:12,275 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading 22 modules... 
-2026-03-01 12:59:14,262 5449 INFO odoo_fitdnu_clean odoo.modules.loading: Loading module quan_ly_khach_hang (8/22) 
-2026-03-01 12:59:14,651 5449 INFO odoo_fitdnu_clean odoo.modules.registry: module quan_ly_khach_hang: creating or updating database tables 
-2026-03-01 12:59:15,449 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/security/ir.model.access.csv 
-2026-03-01 12:59:15,528 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/data/ir_sequence.xml 
-2026-03-01 12:59:15,582 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/chi_tiet_don_hang.xml 
-2026-03-01 12:59:15,698 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/chi_tiet_san_pham.xml 
-2026-03-01 12:59:15,757 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/thong_tin_khach_hang.xml 
-2026-03-01 12:59:15,878 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/ho_tro_khach_hang.xml 
-2026-03-01 12:59:15,955 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/thong_ke_ho_tro_nhan_vien.xml 
-2026-03-01 12:59:16,205 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/thong_ke_mua_hang_khach_hang.xml 
-2026-03-01 12:59:16,280 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/phan_tich_khach_hang_theo_mien.xml 
-2026-03-01 12:59:16,418 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/email_sender.xml 
-2026-03-01 12:59:15,530 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/dashboard.xml 
-2026-03-01 12:59:15,586 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/menu.xml 
-2026-03-01 12:59:15,747 5449 INFO odoo_fitdnu_clean odoo.modules.loading: Module quan_ly_khach_hang loaded in 1.48s, 539 queries 
-2026-03-01 12:59:20,876 5449 INFO odoo_fitdnu_clean odoo.modules.loading: Loading module quan_ly_cong_viec (21/22) 
-2026-03-01 12:59:21,435 5449 INFO odoo_fitdnu_clean odoo.modules.registry: module quan_ly_cong_viec: creating or updating database tables 
-2026-03-01 12:59:21,577 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/security/ir.model.access.csv 
-2026-03-01 12:59:21,628 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/data/gemini_config.xml 
-2026-03-01 12:59:21,673 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/task_view.xml 
-2026-03-01 12:59:21,751 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/task_statistic_view.xml 
-2026-03-01 12:59:21,815 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/my_tasks_view.xml 
-2026-03-01 12:59:21,895 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/nhan_vien_extend.xml 
-2026-03-01 12:59:21,964 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/khach_hang_extend.xml 
-2026-03-01 12:59:22,018 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/ho_tro_extend.xml 
-2026-03-01 12:59:22,075 5449 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/menu.xml 
-2026-03-01 12:59:22,219 5449 INFO odoo_fitdnu_clean odoo.modules.loading: Module quan_ly_cong_viec loaded in 1.34s, 257 queries 
-2026-03-01 12:59:22,797 5449 INFO odoo_fitdnu_clean odoo.modules.loading: 22 modules loaded in 10.52s, 796 queries (+0 extra) 
-2026-03-01 12:59:23,041 5449 INFO odoo_fitdnu_clean odoo.modules.registry: verifying fields for every extended model 
-2026-03-01 12:59:23,423 5449 INFO odoo_fitdnu_clean odoo.modules.loading: Modules loaded. 
-2026-03-01 12:59:23,429 5449 INFO odoo_fitdnu_clean odoo.modules.registry: Registry loaded in 59.441s 
-2026-03-01 12:59:23,430 5449 INFO odoo_fitdnu_clean odoo.service.server: Initiating shutdown 
-2026-03-01 12:59:23,431 5449 INFO odoo_fitdnu_clean odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
-2026-03-01 12:59:23,432 5449 INFO odoo_fitdnu_clean odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2026-03-23 04:08:58,634 2230 INFO ? odoo: Odoo version 15.0 
+2026-03-23 04:08:58,636 2230 INFO ? odoo: Using configuration file at /mnt/c/Users/quang/odoo-fitdnu/odoo.conf 
+2026-03-23 04:08:58,637 2230 INFO ? odoo: addons paths: ['/mnt/c/Users/quang/odoo-fitdnu/odoo/addons', '/home/quang/.local/share/Odoo/addons/15.0', '/mnt/c/Users/quang/odoo-fitdnu/addons'] 
+2026-03-23 04:08:58,638 2230 INFO ? odoo: database: odoo@localhost:5431 
+2026-03-23 04:09:00,199 2230 INFO ? odoo.addons.base.models.ir_actions_report: You need Wkhtmltopdf to print a pdf version of the reports. 
+2026-03-23 04:09:04,672 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading 1 modules... 
+2026-03-23 04:09:04,678 2230 INFO odoo_fitdnu_clean odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-03-23 04:09:04,692 2230 INFO odoo_fitdnu_clean odoo.modules.loading: updating modules list 
+2026-03-23 04:09:04,696 2230 INFO odoo_fitdnu_clean odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-03-23 04:09:20,798 2230 WARNING odoo_fitdnu_clean odoo.modules.module: Missing `license` key in manifest for 'quan_ly_van_ban', defaulting to LGPL-3 
+2026-03-23 04:09:24,363 2230 INFO odoo_fitdnu_clean odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['quan_ly_cong_viec', 'quan_ly_khach_hang'] to user __system__ #1 via n/a 
+2026-03-23 04:09:24,364 2230 INFO odoo_fitdnu_clean odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['quan_ly_cong_viec', 'quan_ly_khach_hang'] to user __system__ #1 via n/a 
+2026-03-23 04:09:40,122 2230 WARNING odoo_fitdnu_clean odoo.modules.module: Missing `license` key in manifest for 'quan_ly_van_ban', defaulting to LGPL-3 
+2026-03-23 04:09:44,085 2230 INFO odoo_fitdnu_clean odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2026-03-23 04:09:44,790 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading 22 modules... 
+2026-03-23 04:09:46,300 2230 INFO odoo_fitdnu_clean odoo.modules.loading: Loading module quan_ly_khach_hang (8/22) 
+2026-03-23 04:09:46,724 2230 INFO odoo_fitdnu_clean odoo.modules.registry: module quan_ly_khach_hang: creating or updating database tables 
+2026-03-23 04:09:47,300 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/security/ir.model.access.csv 
+2026-03-23 04:09:47,357 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/data/ir_sequence.xml 
+2026-03-23 04:09:47,402 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/chi_tiet_don_hang.xml 
+2026-03-23 04:09:47,492 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/chi_tiet_san_pham.xml 
+2026-03-23 04:09:47,543 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/thong_tin_khach_hang.xml 
+2026-03-23 04:09:47,632 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/ho_tro_khach_hang.xml 
+2026-03-23 04:09:47,703 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/thong_ke_ho_tro_nhan_vien.xml 
+2026-03-23 04:09:47,808 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/thong_ke_mua_hang_khach_hang.xml 
+2026-03-23 04:09:47,874 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/phan_tich_khach_hang_theo_mien.xml 
+2026-03-23 04:09:47,951 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/email_sender.xml 
+2026-03-23 04:09:47,998 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/dashboard.xml 
+2026-03-23 04:09:48,053 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_khach_hang/views/menu.xml 
+2026-03-23 04:09:48,209 2230 INFO odoo_fitdnu_clean odoo.modules.loading: Module quan_ly_khach_hang loaded in 1.91s, 542 queries 
+2026-03-23 04:09:52,505 2230 INFO odoo_fitdnu_clean odoo.modules.loading: Loading module quan_ly_cong_viec (21/22) 
+2026-03-23 04:09:52,850 2230 INFO odoo_fitdnu_clean odoo.modules.registry: module quan_ly_cong_viec: creating or updating database tables 
+2026-03-23 04:09:52,970 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/security/ir.model.access.csv 
+2026-03-23 04:09:53,017 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/data/gemini_config.xml 
+2026-03-23 04:09:53,050 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/data/sample_data.xml 
+2026-03-23 04:09:53,122 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/task_view.xml 
+2026-03-23 04:09:53,190 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/task_statistic_view.xml 
+2026-03-23 04:09:53,239 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/my_tasks_view.xml 
+2026-03-23 04:09:53,295 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/nhan_vien_extend.xml 
+2026-03-23 04:09:53,344 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/khach_hang_extend.xml 
+2026-03-23 04:09:53,396 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/ho_tro_extend.xml 
+2026-03-23 04:09:53,446 2230 INFO odoo_fitdnu_clean odoo.modules.loading: loading quan_ly_cong_viec/views/menu.xml 
+2026-03-23 04:09:53,564 2230 INFO odoo_fitdnu_clean odoo.modules.loading: Module quan_ly_cong_viec loaded in 1.06s, 309 queries 
+2026-03-23 04:09:54,009 2230 INFO odoo_fitdnu_clean odoo.modules.loading: 22 modules loaded in 9.22s, 851 queries (+0 extra) 
+2026-03-23 04:09:54,177 2230 INFO odoo_fitdnu_clean odoo.modules.registry: verifying fields for every extended model 
+2026-03-23 04:09:54,393 2230 INFO odoo_fitdnu_clean odoo.modules.loading: Modules loaded. 
+2026-03-23 04:09:54,398 2230 INFO odoo_fitdnu_clean odoo.modules.registry: Registry loaded in 49.783s 
+2026-03-23 04:09:54,399 2230 INFO odoo_fitdnu_clean odoo.service.server: Initiating shutdown 
+2026-03-23 04:09:54,400 2230 INFO odoo_fitdnu_clean odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-03-23 04:09:54,401 2230 INFO odoo_fitdnu_clean odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  

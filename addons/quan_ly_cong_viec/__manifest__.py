@@ -26,6 +26,7 @@
     'data': [
         'security/ir.model.access.csv',
         'data/gemini_config.xml',
+        'data/sample_data.xml',
         'views/task_view.xml',
         'views/task_statistic_view.xml',
         'views/my_tasks_view.xml',
@@ -36,6 +37,11 @@
     ],
     # only loaded in demonstration mode
     'demo': [],
+    'assets': {
+        'web.assets_backend': [
+            'addons/quan_ly_khach_hang/static/src/css/premium_ui.css',
+        ],
+    },
     'installable': True,
     'application': True,
     'license': 'LGPL-3',

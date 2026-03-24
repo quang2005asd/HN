@@ -6,9 +6,10 @@
             <field name="name">chi_tiet_don_hang.tree</field>
             <field name="model">chi_tiet_don_hang</field>
             <field name="arch" type="xml">
-                <tree string="Chi tiết đơn hàng">
+                <tree string="Chi tiết đơn hàng" class="qlkh-premium-tree">
                     <field name="order_id"/>
                     <field name="ngay_dat_hang"/>
+                    <field name="ho_tro_khach_hang_id"/>
                     <field name="product_id" string="Tên sản phẩm"/>
                     <field name="quantity"/>
                     <field name="price_unit"/>
@@ -24,12 +25,13 @@
             <field name="name">chi_tiet_don_hang.form</field>
             <field name="model">chi_tiet_don_hang</field>
             <field name="arch" type="xml">
-                <form string="Chi tiết đơn hàng">
+                <form string="Chi tiết đơn hàng" class="qlkh-premium-form">
                     <sheet>
                         <group string="Thông tin đơn hàng">
                             <field name="order_id" required="1"/>
                             <field name="ngay_dat_hang"/>
                             <field name="khach_hang_id" required="1"/>
+                            <field name="ho_tro_khach_hang_id"/>
                         </group>
                         <group string="Chi tiết sản phẩm">
                             <field name="product_id" string="Tên sản phẩm" required="1"/>

@@ -38,3 +38,11 @@ contacting us, please try to put together a proof-of-concept attack and take a c
 what's really at risk.
 If the proposed attack scenario turns out unrealistic, your report will probably be rejected.
 Also be sure to review our list of [non-qualifying issues](https://www.odoo.com/security-report#what).
+
+
+
+(Tùy chọn) Upgrade module 1 lần
+wsl -d Ubuntu-22.04 -- bash -lc "cd /mnt/c/Users/quang/odoo-fitdnu; ./venv/bin/python3 odoo-bin.py -c odoo.conf -d odoo_fitdnu_clean -u quan_ly_cong_viec,quan_ly_khach_hang --stop-after-init"
+
+Chạy Odoo web (foreground, giữ terminal mở)
+wsl -d Ubuntu-22.04 -- bash -lc "cd /mnt/c/Users/quang/odoo-fitdnu; ./venv/bin/python3 odoo-bin.py -c odoo.conf -d odoo_fitdnu_clean"

@@ -1,0 +1,169 @@
+/* Premium UI for custom business modules */
+:root {
+    --fitdnu-ink-900: #102a43;
+    --fitdnu-ink-700: #1f4f7f;
+    --fitdnu-sky-500: #2f84d6;
+    --fitdnu-sky-300: #9ecbff;
+    --fitdnu-mint-500: #18a48f;
+    --fitdnu-surface: rgba(255, 255, 255, 0.93);
+    --fitdnu-border: rgba(28, 78, 126, 0.2);
+    --fitdnu-shadow: 0 16px 34px rgba(16, 42, 67, 0.14);
+}
+
+.o_web_client {
+    font-family: "Plus Jakarta Sans", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.o_form_view.qlkh-premium-form .o_form_sheet_bg,
+.o_form_view.qlcv-premium-form .o_form_sheet_bg {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(47, 132, 214, 0.2), transparent 42%),
+        radial-gradient(circle at 95% 12%, rgba(24, 164, 143, 0.16), transparent 36%),
+        linear-gradient(180deg, #edf4ff 0%, #e5f0ff 45%, #f4f9ff 100%);
+}
+
+.o_form_view.qlkh-premium-form .o_form_sheet,
+.o_form_view.qlcv-premium-form .o_form_sheet {
+    border-radius: 18px;
+    border: 1px solid var(--fitdnu-border);
+    background: var(--fitdnu-surface);
+    box-shadow: var(--fitdnu-shadow);
+    padding: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.o_form_view.qlkh-premium-form .oe_title,
+.o_form_view.qlcv-premium-form .oe_title {
+    background: linear-gradient(120deg, #0f2f53 0%, #21639b 80%);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+}
+
+.o_form_view.qlkh-premium-form .oe_title h1,
+.o_form_view.qlcv-premium-form .oe_title h1,
+.o_form_view.qlcv-premium-form .fitdnu-form-title {
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    margin: 0;
+}
+
+.o_form_view.qlkh-premium-form .o_group,
+.o_form_view.qlcv-premium-form .o_group {
+    background: #fff;
+    border: 1px solid rgba(47, 132, 214, 0.18);
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+}
+
+.o_form_view.qlkh-premium-form .o_group .o_td_label label,
+.o_form_view.qlcv-premium-form .o_group .o_td_label label {
+    color: var(--fitdnu-ink-900);
+    font-weight: 700;
+}
+
+.o_form_view.qlkh-premium-form .o_input,
+.o_form_view.qlcv-premium-form .o_input,
+.o_form_view.qlkh-premium-form .o_field_widget:not(.o_readonly_modifier) input,
+.o_form_view.qlcv-premium-form .o_field_widget:not(.o_readonly_modifier) input,
+.o_form_view.qlkh-premium-form .o_field_widget:not(.o_readonly_modifier) textarea,
+.o_form_view.qlcv-premium-form .o_field_widget:not(.o_readonly_modifier) textarea {
+    border-radius: 10px;
+    border-color: rgba(31, 79, 127, 0.28);
+}
+
+.o_form_view.qlkh-premium-form .o_notebook .nav-tabs .nav-link,
+.o_form_view.qlcv-premium-form .o_notebook .nav-tabs .nav-link {
+    border: none;
+    color: #365770;
+    font-weight: 700;
+    border-radius: 999px;
+    margin-right: 6px;
+    padding: 8px 14px;
+    background: rgba(47, 132, 214, 0.08);
+}
+
+.o_form_view.qlkh-premium-form .o_notebook .nav-tabs .nav-link.active,
+.o_form_view.qlcv-premium-form .o_notebook .nav-tabs .nav-link.active {
+    background: linear-gradient(120deg, #1c5f99 0%, #2f84d6 100%);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(28, 95, 153, 0.26);
+}
+
+.o_form_view.qlkh-premium-form .o_list_view,
+.o_form_view.qlcv-premium-form .o_list_view {
+    border: 1px solid rgba(28, 95, 153, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.o_list_view.qlkh-premium-tree .o_list_table thead,
+.o_list_view.qlcv-premium-tree .o_list_table thead,
+.o_form_view.qlkh-premium-form .o_list_table thead,
+.o_form_view.qlcv-premium-form .o_list_table thead {
+    background: linear-gradient(120deg, #174776 0%, #2f84d6 100%);
+    color: #fff;
+}
+
+.o_list_view.qlkh-premium-tree .o_list_table thead th,
+.o_list_view.qlcv-premium-tree .o_list_table thead th,
+.o_form_view.qlkh-premium-form .o_list_table thead th,
+.o_form_view.qlcv-premium-form .o_list_table thead th {
+    color: #fff;
+    font-weight: 700;
+    border-bottom: none;
+}
+
+.o_list_view.qlkh-premium-tree .o_list_table tbody tr:nth-child(odd),
+.o_list_view.qlcv-premium-tree .o_list_table tbody tr:nth-child(odd),
+.o_form_view.qlkh-premium-form .o_list_table tbody tr:nth-child(odd),
+.o_form_view.qlcv-premium-form .o_list_table tbody tr:nth-child(odd) {
+    background: rgba(160, 206, 255, 0.11);
+}
+
+.o_list_view.qlkh-premium-tree .o_list_table tbody tr:hover,
+.o_list_view.qlcv-premium-tree .o_list_table tbody tr:hover,
+.o_form_view.qlkh-premium-form .o_list_table tbody tr:hover,
+.o_form_view.qlcv-premium-form .o_list_table tbody tr:hover {
+    background: rgba(47, 132, 214, 0.2);
+}
+
+.o_form_view.qlcv-premium-form .fitdnu-state-pill {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 12px;
+    background: #eaf4ff;
+    color: #365770;
+}
+
+.o_form_view.qlcv-premium-form .fitdnu-state-pill.text-primary {
+    background: rgba(47, 132, 214, 0.14);
+    color: #12508b;
+}
+
+.o_form_view.qlcv-premium-form .fitdnu-state-pill.text-success {
+    background: rgba(24, 164, 143, 0.16);
+    color: #147767;
+}
+
+@media (max-width: 992px) {
+    .o_form_view.qlkh-premium-form .o_form_sheet,
+    .o_form_view.qlcv-premium-form .o_form_sheet {
+        border-radius: 12px;
+        padding: 12px;
+    }
+
+    .o_form_view.qlkh-premium-form .oe_title,
+    .o_form_view.qlcv-premium-form .oe_title {
+        padding: 12px;
+    }
+
+    .o_form_view.qlkh-premium-form .o_group,
+    .o_form_view.qlcv-premium-form .o_group {
+        padding: 8px;
+    }
+}
